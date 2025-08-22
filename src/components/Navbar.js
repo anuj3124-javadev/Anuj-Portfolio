@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
+import { CgGitFork, CgFileDocument } from "react-icons/cg";
 import {
   AiFillStar,
   AiOutlineHome,
@@ -13,11 +13,11 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 
-import { CgFileDocument } from "react-icons/cg";
-
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const [stars, setStars] = useState(0);
+  const [forks, setForks] = useState(0);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -27,7 +27,19 @@ function NavBar() {
     }
   }
 
-  window.addEventListener("scroll", scrollHandler);
+  // 👇 Fetch GitHub repo stars + forks
+  useEffect(() => {
+    fetch("https://api.github.com/repos/anuj3124-javadev/Anuj-Portfolio")
+      .then((res) => res.json())
+      .then((data) => {
+        setStars(data.stargazers_count || 0);
+        setForks(data.forks_count || 0);
+      })
+      .catch((err) => console.error("GitHub API error:", err));
+
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
 
   return (
     <Navbar
@@ -74,9 +86,7 @@ function NavBar() {
                 to="/project"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />{" "}
                 Projects
               </Nav.Link>
             </Nav.Item>
@@ -91,14 +101,15 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
+            {/* ⭐ GitHub Button with live stats */}
             <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/anuj3124-javadev/Anuj-Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
+                <CgGitFork style={{ fontSize: "1em" }} /> {forks}{" "}
+                <AiFillStar style={{ fontSize: "1em" }} /> {stars}
               </Button>
             </Nav.Item>
           </Nav>
