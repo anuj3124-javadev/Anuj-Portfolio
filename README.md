@@ -1,10 +1,10 @@
 <h2 align="center">
   Portfolio Website - v2.0<br/>
-  <a href="https://anuj-portfolio-ten.vercel.app/" target="_blank">soumyajit.tech</a>
+  <a href="https://anuj-portfolio-ten.vercel.app/" target="_blank">Anuj Yadav</a>
 </h2>
-<div align="center">
+<!-- <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+</div> -->
 
 <br/>
 
@@ -22,11 +22,11 @@
 
 ## TL;DR
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/anuj3124-javadev/Anuj-Portfolio). Thanks!
+You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [anuj3124-javadev](https://github.com/anuj3124-javadev/Anuj-Portfolio). Thanks!
 
 ## Built With
 
-My personal portfolio <a href="https://anuj-portfolio-ten.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+My personal portfolio <a href="https://anuj-portfolio-ten.vercel.app/" target="_blank">Anujnyadav</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
 This project was built using these technologies.
 
