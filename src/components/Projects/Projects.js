@@ -5,6 +5,7 @@ import Particle from "../Particle";
 import farm from "../../Assets/Projects/farm-genius.png";
 import typing from "../../Assets/Projects/typing-speed.png";
 import weather from "../../Assets/Projects/weather-check.png";
+import Codeai from "../../Assets/Projects/Code Ai.png";
 
 function Projects() {
   return (
@@ -51,14 +52,14 @@ function Projects() {
             />
           </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={Codeai}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="Code AI"
+              description="Code AI is an interactive platform designed to help learners, developers, and enthusiasts practice coding in a fun and intuitive way. ✨ Clean, modern interface with customizable themes. Pre-built coding templates for quick start. Simple “Start Coding” flow for a smooth experience"
+              ghLink="https://github.com/anuj3124-javadev/Code-editor"
+              demoLink="https://code-editor-theta-sandy.vercel.app/"
             />
           </Col>
 
@@ -83,7 +84,7 @@ function Projects() {
               ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
               // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
             />
-          </Col> */}
+          </Col>
         </Row>
       </Container>
     </Container>
